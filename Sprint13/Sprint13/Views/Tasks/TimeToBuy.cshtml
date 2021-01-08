@@ -1,0 +1,6 @@
+﻿@{
+    ViewData["Title"] = "It's time to shopping!";
+}
+@inject Sprint13.Services.ITimeService Timer;
+<h3>@ViewData["Title"]</h3>
+<p>@Timer.GetTimeForTomorrow()</p>

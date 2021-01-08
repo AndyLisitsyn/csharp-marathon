@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Greetings";
+}
+<h1>@ViewData["Title"]</h1>
+
+@{
+    var myMessage = "Hello C# Marathon";
+    var greeting = "Welcome to our project!";
+    @:<p>The value of myMessage is: @myMessage</p>
+    @:<p>The greeting is: @greeting</p>
+    @:<p>Here in Ukraine: @DateTime.Today.DayOfWeek.ToString()</p>
+    if (DateTime.Now.Hour > 17)
+    {
+        @:<p>We wish you: Good evening!</p>
+    }
+    else
+    {
+        @:<p>We wish you: Good morning!</p>
+    }
+    @:<p>Today is @DateTime.Today.DayOfWeek.ToString()</p>
+}
+
+<table border="1">
+    <tbody>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Day</td>
+            <td>@DateTime.Now.Day</td>
+        </tr>
+        <tr>
+            <td>Hour</td>
+            <td>@DateTime.Now.Hour</td>
+        </tr>
+        <tr>
+            <td>Minute</td>
+            <td>@DateTime.Now.Minute</td>
+        </tr>
+        <tr>
+            <td>Second</td>
+            <td>@DateTime.Now.Second</td>
+        </tr>
+    </tbody>
+</table>
+

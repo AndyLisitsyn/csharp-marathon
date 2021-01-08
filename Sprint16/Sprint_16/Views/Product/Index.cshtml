@@ -1,0 +1,68 @@
+﻿
+@model IEnumerable<Sprint_16.Models.Product>
+
+@{
+	ViewData["Title"] = "Index";
+}
+<h1>Products</h1>
+<p>
+		<a asp-action="Create" class="btn btn-primary btn-sm">Create New</a>
+</p>
+@*
+<form asp-action="Index" method="get">
+	<div class="form-actions no-color">
+		<p>Find product by Id:</p>
+		<input type="text" name="SearchStringId" value="@ViewData["CurrentFilterId"]" />
+		<p>Find product by name:</p>
+		<input type="text" name="SearchStringName" value="@ViewData["CurrentFilterName"]" />
+		<input type="submit" value="Search" class="btn btn-primary btn-sm" />
+		<a asp-action="Index" class="btn btn-primary btn-sm">Back to Full List</a>
+		<br /><br />
+	</div>
+</form>*@
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				<a asp-action="Index" asp-route-sortOrder="@ViewData["IdSortParm"]">@Html.DisplayNameFor(model => model.Id)</a>
+				@*@Html.DisplayNameFor(model => model.Id)*@
+			</th>
+			<th>
+				<a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.Name)</a>
+				@*@Html.DisplayNameFor(model => model.Name)*@
+			</th>
+			<th>
+				@*<a asp-action="Index" asp-route-sortOrder="@ViewData["PriceSortParm"]">@Html.DisplayNameFor(model => model.Price)</a>*@
+				@Html.DisplayNameFor(model => model.Price)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Id)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Name)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Price)
+				</td>
+				<td>
+					@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+					@Html.ActionLink("View", "View", new { id = item.Id }) |
+					@Html.ActionLink("Delete", "Delete", new { id = item.Id })
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+@section Scripts {
+		@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	}

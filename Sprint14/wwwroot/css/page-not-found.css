@@ -1,0 +1,19 @@
+﻿html * {
+    font-family: Arial;
+}
+
+a {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+h1 {
+    color: cornflowerblue
+}
+
+h3 {
+    color: orange
+}

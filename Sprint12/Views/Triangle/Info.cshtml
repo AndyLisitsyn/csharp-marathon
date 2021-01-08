@@ -1,0 +1,17 @@
+﻿@model Triangle
+
+@{
+    ViewData["Title"] = "Info";
+}
+
+<span>Triangle:</span>
+<span>(@Model.Side1, @Model.Side2, @Model.Side3)</span>
+<br />
+<br />
+<span>Reduced:</span>
+<span>(@ViewBag.Reduce)</span>
+<br />
+<br />
+<span>Area = @ViewBag.Area</span>
+<span>Perimeter = @ViewBag.Perimeter</span>
+

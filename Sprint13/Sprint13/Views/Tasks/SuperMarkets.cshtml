@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Our Supermarkets";
+}
+<h1>@ViewData["Title"]</h1>
+
+<h3>There are @ViewBag.SuperMarkets.Length markets</h3>
+
+@foreach (var market in ViewBag.SuperMarkets)
+{
+    <p>@market</p>
+}

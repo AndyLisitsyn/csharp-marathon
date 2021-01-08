@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "";
+    ViewData["Title"] = "404";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/css/page-not-found.css" />
+</head>
+<body>
+    <h1>@ViewData["Title"]</h1>
+    <h3>The product does not exist</h3>
+    <p><a asp-controller="Products" asp-action="Index">Back to products</a></p>
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Your shopping cart";
+}
+<h1>@ViewData["Title"]</h1>
+
+@using (Html.BeginForm("ShoppingCart", "Tasks", FormMethod.Post))
+{
+    @Html.Label("Input your fullname:");
+    <br />
+    @Html.TextBox("name")
+    <br />
+    @Html.Label("Input your address:")
+    <br />
+    @Html.TextBox("address")
+    <br />
+    <br />
+    @Html.DropDownList("supermarkets", new SelectList(ViewBag.markets));
+    <br />
+    <br />
+    @Html.RadioButton("date", "today")
+    @DateTime.Today.ToString("dd/MM/yyyy")
+    <br />
+    @Html.RadioButton("date", "tomorrow")
+    @DateTime.Today.AddDays(1).ToString("dd/MM/yyyy")
+    <br />
+    @Html.RadioButton("date", "afterTomorrow")
+    @DateTime.Today.AddDays(2).ToString("dd/MM/yyyy")
+    <br />
+    <br />
+    @Html.ListBox("products", new SelectList(ViewBag.products));
+    <br />
+    <br />
+    <input type="submit" name="send" value="Send" />
+}
